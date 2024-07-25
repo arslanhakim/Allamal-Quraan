@@ -1,0 +1,68 @@
+/* Testimonials.css */
+.scroll-container {
+  overflow-x: scroll;
+  white-space: nowrap;
+  padding: 10px; /* Adjust padding as needed */
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+}
+
+.scroll-container::-webkit-scrollbar {
+  display: none; /* Safari and Chrome */
+}
+
+.testimonial-list {
+  display: inline-flex;
+  gap: 10px; /* Space between testimonials */
+}
+
+.testimonial-card {
+  background: #f9f9f9; /* Background color for the card */
+  border: 1px solid #ddd; /* Border for the card */
+  border-radius: 5px; /* Rounded corners */
+  padding: 20px; /* Padding inside the card */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Shadow effect */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-width: 300px;
+  max-width: 300px;
+  overflow-x: hidden;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: break-word;
+}
+
+.scroll-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.scroll-button.left-0 {
+  left: 10px;
+}
+
+.scroll-button.right-0 {
+  right: 10px;
+}
+.scroll-container::-webkit-scrollbar {
+  display: none;
+}
+
+.scroll-container {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
