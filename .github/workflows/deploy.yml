@@ -16,7 +16,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '20.15.0'  # Updated to match local version
+          node-version: '20'  # Updated to match local version
 
       - name: Install dependencies
         run: npm install
