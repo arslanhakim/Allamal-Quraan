@@ -24,8 +24,8 @@ jobs:
       - name: Build project
         run: npm run build
 
-      - name: List build directory contents
-        run: ls -la build/
+      - name: Verify build directory
+        run: ls -la dist/
 
       - name: Deploy to Hostinger
         uses: SamKirkland/FTP-Deploy-Action@4.1.0
@@ -33,5 +33,5 @@ jobs:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: build/  # Ensure this ends with a /
+          local-dir: dist/  # Ensure this ends with a /
           server-dir: public_html/  # Ensure this ends with a /
