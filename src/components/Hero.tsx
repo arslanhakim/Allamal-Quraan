@@ -1,5 +1,5 @@
 import React from "react";
-import bgImage from "../assets/images/hero-section-img.jpg";
+import bgImage from "/public/assets/images/hero-section-img.jpg";
 
 const Hero: React.FC = () => {
   return (

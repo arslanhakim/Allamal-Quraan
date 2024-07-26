@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useRef } from "react";
+import Header from "../components/Header";
 
 const instructors = [
   {
@@ -6,34 +7,45 @@ const instructors = [
     title: "Islamic Scholar",
     description:
       "Dr. Ahmed Khan is a renowned Islamic scholar with over 20 years of teaching experience.",
-    image: "/src/assets/instructor1.jpg",
+    image: "/public/assets/instructor1.jpg",
   },
   {
     name: "Hafiz Ali Raza",
     title: "Quran Instructor",
     description:
       "Hafiz Ali Raza has memorized the entire Quran and specializes in teaching Tajweed.",
-    image: "/src/assets/instructor2.jpg",
+    image: "/public/assets/instructor2.jpg",
   },
   {
     name: "Dr. Fatima Zahra",
     title: "Islamic Studies Professor",
     description:
       "Dr. Fatima Zahra holds a PhD in Islamic Studies and has published numerous research papers.",
-    image: "/src/assets/instructor3.jpg",
+    image: "/public/assets/instructor3.jpg",
   },
   {
     name: "Sheikh Omar Abdullah",
     title: "Senior Imam",
     description:
       "Sheikh Omar Abdullah is a senior Imam with extensive knowledge in Fiqh and Hadith.",
-    image: "/src/assets/instructor4.jpg",
+    image: "/public/assets/instructor4.jpg",
   },
 ];
 
 const Instructors: React.FC = () => {
+  const contactRef = useRef(null);
+  const aboutUsRef = useRef(null);
+  const coursesRef = useRef(null);
+  const instructorsRef = useRef(null);
+  const faqRef = useRef(null);
   return (
     <section className="py-12 bg-gray-100">
+      <Header
+        contactRef={contactRef}
+        aboutUsRef={aboutUsRef}
+        coursesRef={coursesRef}
+        instructorsRef={instructorsRef}
+      />
       <div className="container mx-auto text-center">
         <h2 className="text-4xl font-bold mb-6">Expert Instructors</h2>
         <p className="mb-12">

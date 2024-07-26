@@ -8,7 +8,8 @@ const Courses = ({ coursesRef }) => {
         "Learn the fundamental principles of Islam, including the Five Pillars, the life of Prophet Muhammad (PBUH), and more.",
       buttonText: "Enroll Now",
       navigation: "/enroll",
-      image: "/src/assets/images/card-img-01.jpg",
+      image: "/public/assets/images/card-img-01.jpg",
+      pic: "",
     },
     {
       title: "Duas and Supplications",
@@ -16,7 +17,7 @@ const Courses = ({ coursesRef }) => {
         "Master the essential Duas and supplications for daily life, special occasions, and spiritual growth.",
       buttonText: "Join Class",
       navigation: "/join",
-      image: "/src/assets/images/card-img-02.jpg",
+      image: "/public/assets/images/card-img-02.jpg",
     },
     {
       title: "Advanced Islamic Studies",
@@ -24,7 +25,7 @@ const Courses = ({ coursesRef }) => {
         "Dive deeper into Islamic jurisprudence, theology, and history with our advanced courses.",
       buttonText: "Learn More",
       navigation: "/learn-more",
-      image: "/src/assets/images/Advance Islamic studies.jpg",
+      image: "/public/assets/images/Advance Islamic studies.jpg",
     },
   ];
   return (
