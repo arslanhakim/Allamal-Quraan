@@ -1,5 +1,4 @@
 import React from "react";
-import basicIslam from "/assets/images/card-img-01.jpg";
 
 const Courses = ({ coursesRef }) => {
   const courses = [
@@ -9,7 +8,7 @@ const Courses = ({ coursesRef }) => {
         "Learn the fundamental principles of Islam, including the Five Pillars, the life of Prophet Muhammad (PBUH), and more.",
       buttonText: "Enroll Now",
       navigation: "/enroll",
-      image: { basicIslam },
+      image: "/assets/images/card-img-01.jpg",
       pic: "",
     },
     {
@@ -26,7 +25,7 @@ const Courses = ({ coursesRef }) => {
         "Dive deeper into Islamic jurisprudence, theology, and history with our advanced courses.",
       buttonText: "Learn More",
       navigation: "/learn-more",
-      image: "/public/assets/images/Advance Islamic studies.jpg",
+      image: "/assets/images/Advance Islamic studies.jpg",
     },
   ];
   return (

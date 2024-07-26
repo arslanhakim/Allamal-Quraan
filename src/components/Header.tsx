@@ -69,7 +69,7 @@ const Header: React.FC<HeaderProps> = ({
       <div className="container mx-auto px-3 py-1 flex justify-between items-center">
         <Link to="/">
           <img
-            src="/public/assets/images/logo-removebg-preview.png"
+            src="/assets/images/logo-removebg-preview.png"
             alt="Logo"
             className="h-16 w-auto "
           />

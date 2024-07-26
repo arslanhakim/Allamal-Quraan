@@ -7,28 +7,28 @@ const instructors = [
     title: "Islamic Scholar",
     description:
       "Dr. Ahmed Khan is a renowned Islamic scholar with over 20 years of teaching experience.",
-    image: "/public/assets/instructor1.jpg",
+    image: "/assets/instructor1.jpg",
   },
   {
     name: "Hafiz Ali Raza",
     title: "Quran Instructor",
     description:
       "Hafiz Ali Raza has memorized the entire Quran and specializes in teaching Tajweed.",
-    image: "/public/assets/instructor2.jpg",
+    image: "/assets/instructor2.jpg",
   },
   {
     name: "Dr. Fatima Zahra",
     title: "Islamic Studies Professor",
     description:
       "Dr. Fatima Zahra holds a PhD in Islamic Studies and has published numerous research papers.",
-    image: "/public/assets/instructor3.jpg",
+    image: "/assets/instructor3.jpg",
   },
   {
     name: "Sheikh Omar Abdullah",
     title: "Senior Imam",
     description:
       "Sheikh Omar Abdullah is a senior Imam with extensive knowledge in Fiqh and Hadith.",
-    image: "/public/assets/instructor4.jpg",
+    image: "/assets/instructor4.jpg",
   },
 ];
 

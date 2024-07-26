@@ -31,7 +31,7 @@ const Footer = ({
             Allamal Qur'aan
           </h3>
           <img
-            src="/public/assets/images/logo-removebg-preview.png"
+            src="/assets/images/logo-removebg-preview.png"
             className="bg-primary text-white h-24"
             alt="Allamal Qur'aan Logo"
           />

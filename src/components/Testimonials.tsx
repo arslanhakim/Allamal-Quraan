@@ -170,7 +170,7 @@ const Testimonials = () => {
                 <div className="bg-white rounded-lg text-center shadow-lg p-6 h-full">
                   <div className="flex mt-4 items-center justify-center gap-6 mb-2">
                     <img
-                      src="/public/assets/images/Instructor 1.jpg"
+                      src="/assets/images/Instructor 1.jpg"
                       alt=""
                       className="h-8 w-8 rounded-full"
                     />
