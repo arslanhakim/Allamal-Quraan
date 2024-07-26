@@ -72,25 +72,27 @@ button:focus-visible {
 @font-face {
   font-family: "Exo-Regular";
   src: local("Exo-Regular"),
-    url("./assets/font/Exo-Regular.ttf") format("truetype");
+    url("/public/assets/font/Exo-Regular.ttf") format("truetype");
 }
 @font-face {
   font-family: "Exo-Light";
-  src: local("Exo-Light"), url("./assets/font/Exo-Light.ttf") format("truetype");
+  src: local("Exo-Light"),
+    url("/public/assets/font/Exo-Light.ttf") format("truetype");
 }
 @font-face {
   font-family: "Exo-SemiBold";
   src: local("Exo-SemiBold"),
-    url("./assets/font/Exo-SemiBold.ttf") format("truetype");
+    url("/public/assets/font/Exo-SemiBold.ttf") format("truetype");
 }
 @font-face {
   font-family: "Exo-Medium";
   src: local("Exo-Medium"),
-    url("./assets/font/Exo-Medium.ttf") format("truetype");
+    url("/public/assets/font/Exo-Medium.ttf") format("truetype");
 }
 @font-face {
   font-family: "Exo-Bold";
-  src: local("Exo-Bold"), url("./assets/font/Exo-Bold.ttf") format("truetype");
+  src: local("Exo-Bold"),
+    url("/public/assets/font/Exo-Bold.ttf") format("truetype");
 }
 
 .Exo-Regular {

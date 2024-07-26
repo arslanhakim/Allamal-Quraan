@@ -1,4 +1,5 @@
 import React from "react";
+import basicIslam from "/public/assets/images/card-img-01.jpg";
 
 const Courses = ({ coursesRef }) => {
   const courses = [
@@ -8,7 +9,7 @@ const Courses = ({ coursesRef }) => {
         "Learn the fundamental principles of Islam, including the Five Pillars, the life of Prophet Muhammad (PBUH), and more.",
       buttonText: "Enroll Now",
       navigation: "/enroll",
-      image: "/public/assets/images/card-img-01.jpg",
+      image: { basicIslam },
       pic: "",
     },
     {
