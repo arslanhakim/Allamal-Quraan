@@ -1,5 +1,5 @@
 import React from "react";
-import basicIslam from "/public/assets/images/card-img-01.jpg";
+import basicIslam from "/assets/images/card-img-01.jpg";
 
 const Courses = ({ coursesRef }) => {
   const courses = [
@@ -18,7 +18,7 @@ const Courses = ({ coursesRef }) => {
         "Master the essential Duas and supplications for daily life, special occasions, and spiritual growth.",
       buttonText: "Join Class",
       navigation: "/join",
-      image: "/public/assets/images/card-img-02.jpg",
+      image: "/assets/images/card-img-02.jpg",
     },
     {
       title: "Advanced Islamic Studies",
