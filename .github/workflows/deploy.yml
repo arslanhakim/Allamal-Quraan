@@ -16,7 +16,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '20.15.0'  # Updated to match local version
+          node-version: '20'  # Updated to match local version
 
       - name: Install dependencies
         run: npm install
@@ -34,4 +34,4 @@ jobs:
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: dist/  # Ensure this ends with a /
-          server-dir: public_html/  # Ensure this ends with a /
+          server-dir: /public_html/  # Ensure this ends with a /
