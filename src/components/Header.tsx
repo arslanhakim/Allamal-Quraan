@@ -96,10 +96,8 @@ const Header: React.FC<HeaderProps> = ({
         </nav>
         <button
           onClick={() => scrollToSection(contactRef)}
-          className={`hidden md:block py-1 px-6  rounded-full hover:bg-opacity-90 hover:scale-95 transition-all duration-1000 ease-in-out font-serif ${
-            scrolled
-              ? "bg-white text-primary font-bold"
-              : "bg-primary text-white"
+          className={`hidden md:block py-1 px-6 font-bold rounded-full hover:bg-opacity-90 hover:scale-95 transition-all duration-1000 ease-in-out font-serif ${
+            scrolled ? "bg-white text-primary " : "bg-primary text-white"
           }`}
         >
           Contact Us
