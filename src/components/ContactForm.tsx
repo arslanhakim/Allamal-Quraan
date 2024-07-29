@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "../styles/autofill.css";
 import axios from "axios";
 
@@ -7,6 +7,15 @@ const ContactForm = ({ contactRef }) => {
   const email = useRef<HTMLInputElement>(null);
   const phone = useRef<HTMLInputElement>(null);
   const message = useRef<HTMLTextAreaElement>(null);
+
+  // const [contacts, setContacts] = useState([]);
+
+  // useEffect(() => {
+  //   fetch(`${process.env.REACT_APP_API_URL}/api/contacts`)
+  //     .then((response) => response.json())
+  //     .then((data) => setContacts(data))
+  //     .catch((error) => console.error("Error fetching contacts:", error));
+  // }, []);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -17,9 +26,12 @@ const ContactForm = ({ contactRef }) => {
       message: message.current!.value,
     };
     try {
-      const response = await axios.post("http://localhost:5000/send", data);
+      const response = await axios.post(
+        `https://allamal-quraan-backend-git-main-arslanhakims-projects.vercel.app/send`,
+        data
+      );
       if (response.status === 200) {
-        alert("Email sent successfully!");
+        alert("Message sent successfully!");
         // Reset form fields
         name.current!.value = "";
         email.current!.value = "";
@@ -27,8 +39,8 @@ const ContactForm = ({ contactRef }) => {
         message.current!.value = "";
       }
     } catch (error) {
-      console.error("There was an error sending the email:", error);
-      alert("There was an error sending your message. Please try again later.");
+      console.error("There was an error sending the message:", error);
+      alert("Failed to send message. Please try again later.");
     }
   };
 
@@ -44,7 +56,7 @@ const ContactForm = ({ contactRef }) => {
           feel free to contact us.
         </p>
         <h2 className="text-2xl font-semibold text-primary mb-6">Contact Us</h2>
-        <form className="max-w-xl mx-auto " onSubmit={handleSubmit}>
+        <form className="max-w-xl mx-4 md:mx-auto " onSubmit={handleSubmit}>
           <div className="mb-4">
             <input
               type="text"

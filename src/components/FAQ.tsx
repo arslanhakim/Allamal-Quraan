@@ -42,7 +42,7 @@ const FAQ: React.FC<FaqProps> = ({ faqRef }) => {
           Find answers to the most frequently asked questions about our Quranic
           and Islamic courses, schedules, payment methods, and more.
         </p>
-        <div className="w-full mx-auto">
+        <div className="w-full px-4 md:mx-auto">
           {faqs.map((faq, index) => (
             <div key={index} className="mb-4 text-left w-full">
               <button

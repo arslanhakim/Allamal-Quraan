@@ -157,7 +157,10 @@ const Header: React.FC<HeaderProps> = ({
         </p>
         <div className="flex justify-center ">
           <button
-            onClick={() => scrollToSection(contactRef)}
+            onClick={() => {
+              scrollToSection(contactRef);
+              handleMenuToggle();
+            }}
             className={`my-6 flex place-self-center shadow-2xl font-serif shadow-black-dark bg-primary text-white hover:bg-white hover:text-primary font-bold py-1 px-6 rounded-full hover:bg-opacity-90 hover:scale-95 transition-all duration-1000 ease-in-out
               
             `}
