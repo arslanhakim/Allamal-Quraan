@@ -67,11 +67,6 @@ const ContactForm = ({ contactRef }) => {
               ref={name}
               // onChange={(e) => setName(e.target.value)}
               required
-              // style={{
-              //   WebkitBoxShadow: "0 0 0 1000px white inset",
-              //   boxShadow: "0 0 0 1000px white inset",
-              //   WebkitTextFillColor: "#000",
-              // }}
             />
           </div>
           <div className="mb-4 flex flex-col sm:flex-row gap-4">
