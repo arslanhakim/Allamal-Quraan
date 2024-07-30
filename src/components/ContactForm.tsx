@@ -26,8 +26,10 @@ const ContactForm = ({ contactRef }) => {
       message: message.current!.value,
     };
     try {
+      console.log("trying to submit");
       const response = await axios.post(
-        `https://allamal-quraan-backend-git-main-arslanhakims-projects.vercel.app/send`,
+        // `https://allamal-quraan-backend-git-main-arslanhakims-projects.vercel.app/send`,
+        `http://localhost:5000/send`,
         data
       );
       if (response.status === 200) {
