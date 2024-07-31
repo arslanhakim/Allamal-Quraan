@@ -9,18 +9,16 @@ const ContactForm = ({ contactRef }) => {
   const message = useRef<HTMLTextAreaElement>(null);
 
   const [contacts, setContacts] = useState([]);
+  const baseURL = "https://allamal-quraan-backend-1.vercel.app";
 
   const fetchContacts = async () => {
     try {
-      const response = await fetch(
-        "https://allamal-quraan-backend-1.vercel.app/api/contacts",
-        {
-          method: "GET",
-          headers: {
-            "Content-Type": "application/json",
-          },
-        }
-      );
+      const response = await fetch(`${baseURL}/api/contacts`, {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
       const data = await response.json();
       console.log(data);
       setContacts(data);
@@ -54,7 +52,7 @@ const ContactForm = ({ contactRef }) => {
       console.log("trying to submit");
       const response = await axios.post(
         // `https://allamal-quraan-backend-git-main-arslanhakims-projects.vercel.app/send`,
-        `https://allamal-quraan-backend-1.vercel.app/send`,
+        `${baseURL}/send`,
         data
       );
       if (response.status === 200) {
