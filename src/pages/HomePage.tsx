@@ -38,9 +38,9 @@ const HomePage: React.FC = () => {
         faqRef={faqRef}
       />
 
-      <div ref={heroRef} className="animate-slideUp">
-        <Hero />
-      </div>
+      {/* <div ref={heroRef} className="animate-slideUp"> */}
+      <Hero />
+      {/* </div> */}
       <div ref={aboutUsSectionRef} className="animate-slideUp">
         <About_us />
       </div>
