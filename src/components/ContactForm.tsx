@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import "../styles/autofill.css";
 import axios from "axios";
+import useIntersectionObserver from "./useIntersectionObserver";
 
 const ContactForm = ({ contactRef }) => {
   const name = useRef<HTMLInputElement>(null);
@@ -30,6 +31,7 @@ const ContactForm = ({ contactRef }) => {
   useEffect(() => {
     fetchContacts();
   }, []);
+  const ref = useIntersectionObserver("animate-slideUp");
 
   // const [contacts, setContacts] = useState([]);
 
@@ -74,7 +76,7 @@ const ContactForm = ({ contactRef }) => {
     "w-full p-3 border text-black-dark hover:text-white border-primary rounded bg-white outline-primary placeholder:text-primary hover:bg-primary hover:placeholder-white";
 
   return (
-    <section className="py-12 bg-white mx-2" ref={contactRef}>
+    <section  className="py-12 bg-white mx-2" ref={contactRef}>
       <div className="container mx-auto text-center">
         <h2 className="text-4xl font-bold mb-6">Need More Help?</h2>
         <p className="font-normal mb-6 mx-20">

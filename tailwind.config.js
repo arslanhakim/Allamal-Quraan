@@ -123,6 +123,8 @@ module.exports = {
       96: "24rem",
     },
     animation: {
+      heartbeat: "heartbeat 2s ease-in-out infinite",
+      slideUp: "slideUp 0.5s ease-out forwards",
       none: "none",
       spin: "spin 1s linear infinite",
       ping: "ping 1s cubic-bezier(0, 0, 0.2, 1) infinite",
@@ -583,6 +585,14 @@ module.exports = {
       full: "100%",
     }),
     keyframes: {
+      heartbeat: {
+        "0%, 100%": { transform: "scale(1)" },
+        "50%": { transform: "scale(1.1)" },
+      },
+      slideUp: {
+        "0%": { transform: "translateY(100px)", opacity: 0 },
+        "100%": { transform: "translateY(0)", opacity: 1 },
+      },
       spin: {
         to: {
           transform: "rotate(360deg)",

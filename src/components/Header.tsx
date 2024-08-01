@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./Navbar.css";
+import { motion } from "framer-motion";
 
 interface HeaderProps {
   contactRef: React.MutableRefObject<null>;
@@ -70,10 +71,13 @@ const Header: React.FC<HeaderProps> = ({
     >
       <div className="container mx-auto px-3 py-1 flex justify-between items-center">
         <Link to="/">
-          <img
+          <motion.img
             src="/assets/images/logo-removebg-preview.png"
             alt="Logo"
             className="h-16 w-auto "
+            initial={{ opacity: 0, x: -100 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5, delay: 0.3 }}
           />
         </Link>
         <nav className="hidden md:flex space-x-10 text-xl font-bold">
@@ -103,7 +107,7 @@ const Header: React.FC<HeaderProps> = ({
           onClick={() => scrollToSection(contactRef)}
           className={`hidden md:block py-1 px-6 font-bold rounded-full hover:bg-opacity-90 hover:scale-95 transition-all duration-1000 ease-in-out font-serif ${
             scrolled ? "bg-white text-primary " : "bg-primary text-white"
-          }`}
+          } animate-heartbeat`}
         >
           Contact Us
         </button>

@@ -1,9 +1,15 @@
 import React, { useRef } from "react";
 import Header from "./Header";
+import { motion } from "framer-motion";
 
 const About_us = () => {
   return (
-    <section className="py-16 bg-gray-100 mx-2">
+    <motion.section
+      className="py-16 bg-gray-100 mx-2"
+      initial={{ opacity: 0, x: -100 }}
+      animate={{ opacity: 1, x: 0 }}
+      transition={{ duration: 0.5, delay: 0.3 }}
+    >
       <div className="container mx-auto px-4">
         <h2 className="text-4xl font-bold text-center mb-8">Who We Are</h2>
         <p className="text-center mb-6 mx-6 lg:px-28">
@@ -36,7 +42,7 @@ const About_us = () => {
           </section>
         </main>
       </div>
-    </section>
+    </motion.section>
   );
 };
 
