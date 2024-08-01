@@ -81,7 +81,6 @@ const Header: React.FC<HeaderProps> = ({
             to="/about-us"
             onClick={() => {
               scrollToSection(aboutUsRef);
-              handleMenuToggle();
             }}
             className={`${css} `}
           >
@@ -134,7 +133,8 @@ const Header: React.FC<HeaderProps> = ({
         //   isOpen ? "slide-down" : "slide-up"
         // }`}
       >
-        <p
+        <Link
+          to="/about-us"
           onClick={() => {
             scrollToSection(aboutUsRef);
             handleMenuToggle();
@@ -142,7 +142,7 @@ const Header: React.FC<HeaderProps> = ({
           className={`${css2} `}
         >
           About Us
-        </p>
+        </Link>
         <p
           onClick={() => {
             scrollToSection(coursesRef);
