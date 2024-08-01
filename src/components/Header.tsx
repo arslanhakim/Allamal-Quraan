@@ -7,6 +7,7 @@ interface HeaderProps {
   aboutUsRef: React.MutableRefObject<null>;
   coursesRef: React.MutableRefObject<null>;
   instructorsRef: React.MutableRefObject<null>;
+  faqRef: React.MutableRefObject<null>;
 }
 
 const Header: React.FC<HeaderProps> = ({
@@ -14,6 +15,7 @@ const Header: React.FC<HeaderProps> = ({
   aboutUsRef,
   coursesRef,
   instructorsRef,
+  faqRef,
 }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -75,7 +77,8 @@ const Header: React.FC<HeaderProps> = ({
           />
         </Link>
         <nav className="hidden md:flex space-x-10 text-xl font-bold">
-          <p
+          <Link
+            to="/about-us"
             onClick={() => {
               scrollToSection(aboutUsRef);
               handleMenuToggle();
@@ -83,7 +86,7 @@ const Header: React.FC<HeaderProps> = ({
             className={`${css} `}
           >
             About Us
-          </p>
+          </Link>
           <p onClick={() => scrollToSection(coursesRef)} className={`${css}  `}>
             Courses
           </p>
@@ -92,6 +95,9 @@ const Header: React.FC<HeaderProps> = ({
             className={`${css}`}
           >
             Instructors
+          </p>
+          <p onClick={() => scrollToSection(faqRef)} className={`${css}`}>
+            FAQs
           </p>
         </nav>
         <button
@@ -154,6 +160,15 @@ const Header: React.FC<HeaderProps> = ({
           className={`${css2}`}
         >
           Instructors
+        </p>
+        <p
+          onClick={() => {
+            scrollToSection(faqRef);
+            handleMenuToggle();
+          }}
+          className={`${css2}`}
+        >
+          FAQs
         </p>
         <div className="flex justify-center ">
           <button

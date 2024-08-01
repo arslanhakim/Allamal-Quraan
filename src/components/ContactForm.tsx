@@ -10,6 +10,7 @@ const ContactForm = ({ contactRef }) => {
 
   const [contacts, setContacts] = useState([]);
   const baseURL = "https://allamal-quraan-backend-1.vercel.app";
+  // const baseURL = "https://allamalquraan.netlify.app";
 
   const fetchContacts = async () => {
     try {
@@ -20,7 +21,6 @@ const ContactForm = ({ contactRef }) => {
         },
       });
       const data = await response.json();
-      console.log(data);
       setContacts(data);
     } catch (error) {
       console.error("Error fetching contacts:", error);

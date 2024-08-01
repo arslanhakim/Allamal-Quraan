@@ -8,6 +8,7 @@ import ContactForm from "../components/ContactForm";
 import Footer from "../components/Footer";
 import LearnQuranSection from "../components/LearnQuraanSection";
 import Courses from "../components/Courses";
+import About_us from "../components/About_us";
 
 const HomePage: React.FC = () => {
   const contactRef = useRef(null);
@@ -22,8 +23,11 @@ const HomePage: React.FC = () => {
         aboutUsRef={aboutUsRef}
         coursesRef={coursesRef}
         instructorsRef={instructorsRef}
+        faqRef={faqRef}
       />
+
       <Hero />
+      <About_us />
       <LearnQuranSection />
       <Courses coursesRef={coursesRef} />
       <Instructors instructorsRef={instructorsRef} />
