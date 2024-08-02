@@ -33,7 +33,7 @@ const AboutUs = () => {
   });
 
   return (
-    <div className="min-h-screen flex flex-col w-full bg-gray-extra text-black-dark">
+    <div className="w-full flex flex-col bg-gray-extra text-black-dark">
       {/* Header */}
       <Header
         contactRef={contactRef}
@@ -130,10 +130,22 @@ const AboutUs = () => {
                 </p>
                 <p>Generally, we will be focusing on,</p>
                 <ul>
-                  <li>• Quran (Nazra & Hifz)</li>
-                  <li>• Basic Islamic Knowledge</li>
-                  <li>• 40 Ahaadeeth (Sayings of Prophet MUHAMMAD pbuh)</li>
-                  <li>• Masnoon Duas (Prayers)</li>
+                  <li>
+                    <span className="text-primary text-xl font-bold">•</span>
+                    Quran (Nazra & Hifz)
+                  </li>
+                  <li>
+                    <span className="text-primary text-xl font-bold">•</span>
+                    Basic Islamic Knowledge
+                  </li>
+                  <li>
+                    <span className="text-primary text-xl font-bold">•</span> 40
+                    Ahaadeeth (Sayings of Prophet MUHAMMAD pbuh)
+                  </li>
+                  <li>
+                    <span className="text-primary text-xl font-bold">•</span>{" "}
+                    Masnoon Duas (Prayers)
+                  </li>
                 </ul>
               </div>
             </div>

@@ -19,14 +19,14 @@ const HomePage: React.FC = () => {
   const faqRef = useRef(null);
 
   // Apply intersection observer to each section
-  const heroRef = useIntersectionObserver("animate-slideUp");
-  const aboutUsSectionRef = useIntersectionObserver("animate-slideUp");
-  const learnQuranSectionRef = useIntersectionObserver("animate-slideUp");
-  const coursesSectionRef = useIntersectionObserver("animate-slideUp");
-  const instructorsSectionRef = useIntersectionObserver("animate-slideUp");
-  const testimonialsSectionRef = useIntersectionObserver("animate-slideUp");
-  const faqSectionRef = useIntersectionObserver("animate-slideUp");
-  const contactFormSectionRef = useIntersectionObserver("animate-slideUp");
+  const heroRef = useIntersectionObserver("animate-slide_Up");
+  const aboutUsSectionRef = useIntersectionObserver("animate-slide_Up");
+  const learnQuranSectionRef = useIntersectionObserver("animate-slide_Up");
+  const coursesSectionRef = useIntersectionObserver("animate-slide_Up");
+  const instructorsSectionRef = useIntersectionObserver("animate-slide_Up");
+  const testimonialsSectionRef = useIntersectionObserver("animate-slide_Up");
+  const faqSectionRef = useIntersectionObserver("animate-slide_Up");
+  const contactFormSectionRef = useIntersectionObserver("animate-slide_Up");
 
   return (
     <div className="w-full bg-gray-extra text-black-dark relative">
@@ -38,28 +38,28 @@ const HomePage: React.FC = () => {
         faqRef={faqRef}
       />
 
-      {/* <div ref={heroRef} className="animate-slideUp"> */}
+      {/* <div ref={heroRef} className="animate-slide_Up"> */}
       <Hero />
       {/* </div> */}
-      <div ref={aboutUsSectionRef} className="animate-slideUp">
+      <div ref={aboutUsSectionRef} className="animate-slide_Up">
         <About_us />
       </div>
-      <div ref={learnQuranSectionRef} className="animate-slideUp">
+      <div ref={learnQuranSectionRef} className="animate-slide_Up">
         <LearnQuranSection />
       </div>
-      <div ref={coursesSectionRef} className="animate-slideUp">
+      <div ref={coursesSectionRef} className="animate-slide_Up">
         <Courses coursesRef={coursesRef} />
       </div>
-      <div ref={instructorsSectionRef} className="animate-slideUp">
+      <div ref={instructorsSectionRef} className="animate-slide_Up">
         <Instructors instructorsRef={instructorsRef} />
       </div>
-      <div ref={testimonialsSectionRef} className="animate-slideUp">
+      <div ref={testimonialsSectionRef} className="animate-slide_Up">
         <Testimonials />
       </div>
-      <div ref={faqSectionRef} className="animate-slideUp">
+      <div ref={faqSectionRef} className="animate-slide_Up">
         <FAQ faqRef={faqRef} />
       </div>
-      <div ref={contactFormSectionRef} className="animate-slideUp">
+      <div ref={contactFormSectionRef} className="animate-slide_Up">
         <ContactForm contactRef={contactRef} />
       </div>
       <Footer

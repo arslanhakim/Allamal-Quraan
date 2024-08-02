@@ -124,7 +124,7 @@ module.exports = {
     },
     animation: {
       heartbeat: "heartbeat 2s ease-in-out infinite",
-      slideUp: "slideUp 0.5s ease-out forwards",
+      slide_Up: "slideUp 0.5s ease-out forwards",
       none: "none",
       spin: "spin 1s linear infinite",
       ping: "ping 1s cubic-bezier(0, 0, 0.2, 1) infinite",

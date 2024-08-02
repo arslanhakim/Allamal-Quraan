@@ -54,9 +54,9 @@ const Header: React.FC<HeaderProps> = ({
   const css2 =
     "block py-2 px-4 text-white navbar-option group hover:text-primary border-x-0 border-b border-primary";
 
-  const menuClasses = `md:hidden flex-col fixed w-full font-bold bg-[#844204] bg-opacity-90 transition-transform duration-300 ${
+  const menuClasses = `${
     isOpen ? "slide-down" : "slide-up"
-  }`;
+  } md:hidden flex-col fixed w-full font-bold bg-[#844204] bg-opacity-90 transition-transform duration-300 `;
 
   return (
     <header

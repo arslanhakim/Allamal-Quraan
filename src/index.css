@@ -174,10 +174,10 @@ input::-webkit-datetime-edit {
 .animate-slideUp {
   opacity: 0;
   transform: translateY(200px);
-  transition: opacity 0s ease-out, transform 1s ease-out; /* Increased duration */
+  transition: opacity 0s ease-out, transform 1s ease-out;
 }
 
 .animate-slideUp.show {
   opacity: 1;
-  transform: translateY(0); /* Move to original position */
+  transform: translateY(0);
 }

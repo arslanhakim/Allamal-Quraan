@@ -29,7 +29,7 @@
 
 /* Navbar.css */
 
-@keyframes slideDown {
+@keyframes slideDownNav {
   from {
     transform: translateY(-100%);
     opacity: 0;
@@ -42,7 +42,7 @@
   }
 }
 
-@keyframes slideUp {
+@keyframes slideUpNav {
   from {
     transform: translateY(0);
     opacity: 100;
@@ -56,12 +56,12 @@
 }
 
 .slide-down {
-  animation: slideDown 0.3s forwards;
+  animation: slideDownNav 0.3s forwards;
   /* z-index: 1000; */
 }
 
 .slide-up {
-  animation: slideUp 0.3s forwards;
+  animation: slideUpNav 0.3s forwards;
 }
 
 /* .mobile-menu {
