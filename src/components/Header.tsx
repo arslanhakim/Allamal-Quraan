@@ -20,6 +20,15 @@ const Header: React.FC<HeaderProps> = ({
 }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [hoveredItem, setHoveredItem] = useState<number | null>(null);
+
+  const headerOpt = [
+    { title: "Contact", ref: contactRef },
+    { title: "AboutUs", ref: aboutUsRef },
+    { title: "Courses", ref: coursesRef },
+    { title: "FAQs", ref: faqRef },
+    { title: "Instructor", ref: instructorsRef },
+  ];
 
   const handleMenuToggle = () => {
     setIsOpen(!isOpen);
@@ -50,13 +59,14 @@ const Header: React.FC<HeaderProps> = ({
     scrolled
       ? "text-white hover:text-white"
       : "text-primary hover:text-primary "
-  }`;
+  } 
+  `;
   const css2 =
     "block py-2 px-4 text-white navbar-option group hover:text-primary border-x-0 border-b border-primary";
 
   const menuClasses = `${
     isOpen ? "slide-down" : "slide-up"
-  } md:hidden flex-col fixed w-full font-bold bg-[#844204] bg-opacity-90 transition-transform duration-300 `;
+  } md:hidden flex-col fixed w-full font-bold bg-primary bg-opacity-90 transition-transform duration-300 `;
 
   return (
     <header
@@ -81,7 +91,25 @@ const Header: React.FC<HeaderProps> = ({
           />
         </Link>
         <nav className="hidden md:flex space-x-10 text-xl font-bold">
-          <Link
+          {headerOpt.map((header, key) => (
+            <Link
+              key={key}
+              to="/about-us"
+              onClick={() => {
+                scrollToSection(header.ref);
+              }}
+              onMouseEnter={() => setHoveredItem(key)}
+              onMouseLeave={() => setHoveredItem(null)}
+              className={`${css} ${
+                hoveredItem !== null && hoveredItem !== key
+                  ? "opacity-50"
+                  : "opacity-100"
+              }`}
+            >
+              {header.title}
+            </Link>
+          ))}
+          {/* <Link
             to="/about-us"
             onClick={() => {
               scrollToSection(aboutUsRef);
@@ -101,7 +129,7 @@ const Header: React.FC<HeaderProps> = ({
           </p>
           <p onClick={() => scrollToSection(faqRef)} className={`${css}`}>
             FAQs
-          </p>
+          </p> */}
         </nav>
         <button
           onClick={() => scrollToSection(contactRef)}
@@ -180,7 +208,7 @@ const Header: React.FC<HeaderProps> = ({
               scrollToSection(contactRef);
               handleMenuToggle();
             }}
-            className={`my-6 flex place-self-center shadow-2xl font-serif shadow-black-dark bg-primary text-white hover:bg-white hover:text-primary font-bold py-1 px-6 rounded-full hover:bg-opacity-90 hover:scale-95 transition-all duration-1000 ease-in-out
+            className={`animate-heartbeat my-6 flex place-self-center shadow-2xl font-serif shadow-black-dark bg-white text-primary font-bold py-1 px-6 rounded-full hover:bg-opacity-90 hover:scale-95 transition-all duration-1000 ease-in-out
               
             `}
           >
