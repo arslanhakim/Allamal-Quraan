@@ -33,7 +33,7 @@ const AboutUs = () => {
   });
 
   return (
-    <div className="w-full flex flex-col bg-gray-extra text-black-dark">
+    <div className="min-w-screen w-[100%] flex flex-col bg-gray-extra text-black-dark relative ">
       {/* Header */}
       <Header
         contactRef={contactRef}
@@ -49,7 +49,7 @@ const AboutUs = () => {
       </header> */}
 
       {/* Main Content */}
-      <main className="flex-grow container mx-auto p-4 ">
+      <main className="flex-grow container mx-auto p-4 w-full">
         <section className="text-center pt-12">
           <motion.h2
             initial={{ opacity: 0, scale: 0.5, y: -100 }}

@@ -23,7 +23,6 @@ const Header: React.FC<HeaderProps> = ({
   const [hoveredItem, setHoveredItem] = useState<number | null>(null);
 
   const headerOpt = [
-    { title: "Contact", ref: contactRef },
     { title: "AboutUs", ref: aboutUsRef },
     { title: "Courses", ref: coursesRef },
     { title: "FAQs", ref: faqRef },

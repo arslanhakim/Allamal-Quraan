@@ -60,10 +60,10 @@ const About_us = () => {
               </h3>
               <p className="">
                 {isSmallScreen && !isReadMore ? shortText : fullText}
-                {isSmallScreen && (
+                {isSmallScreen && fullText.split(" ").length > 100 && (
                   <span
                     onClick={handleReadMoreToggle}
-                    className="text-primary hover:underline ml-2"
+                    className="text-primary hover:underline ml-2 cursor-pointer"
                   >
                     {isReadMore ? "Read Less" : "Read More"}
                   </span>
