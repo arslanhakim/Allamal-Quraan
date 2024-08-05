@@ -29,7 +29,7 @@ const HomePage: React.FC = () => {
   const contactFormSectionRef = useIntersectionObserver("animate-slide_Up");
 
   return (
-    <div className="w-full bg-gray-extra text-black-dark relative">
+    <div className="w-full max-w-screen bg-gray-extra text-black-dark relative">
       <Header
         contactRef={contactRef}
         aboutUsRef={aboutUsRef}
