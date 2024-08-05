@@ -59,11 +59,7 @@ const About_us = () => {
                 Our Vision And Values
               </h3>
               <p className="">
-                {!isSmallScreen
-                  ? fullText
-                  : isSmallScreen && isReadMore
-                  ? fullText
-                  : shortText}
+                {isSmallScreen && !isReadMore ? shortText : fullText}
                 {isSmallScreen && (
                   <span
                     onClick={handleReadMoreToggle}
