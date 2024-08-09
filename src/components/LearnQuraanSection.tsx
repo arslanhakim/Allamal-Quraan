@@ -6,7 +6,7 @@ const LearnQuranSection: React.FC = () => {
       <div className="container mx-auto flex flex-col lg:flex-row items-center justify-between gap-8">
         <div className="w-full lg:w-1/2 p-2 flex justify-end">
           <img
-            src="/public/assets/images/LearningQuraan.png"
+            src="/assets/images/LearningQuraan.png"
             alt="Quran Learning"
             className="rounded-lg shadow-2xl w-full lg:w-[90%] h-auto lg:max-h-[27rem]"
           />

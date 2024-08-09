@@ -9,7 +9,7 @@ const Courses = ({ coursesRef }) => {
       buttonText: "Enroll Now",
       navigation: "/enroll",
       // image: "/assets/images/card-img-01.jpg",
-      image: "/public/assets/images/children_with_Ustaza.png",
+      image: "/assets/images/children_with_Ustaza.png",
       pic: "",
     },
     {
@@ -18,7 +18,7 @@ const Courses = ({ coursesRef }) => {
         "Master the essential Duas and supplications for daily life, special occasions, and spiritual growth.",
       buttonText: "Join Class",
       navigation: "/join",
-      image: "/public/assets/images/whole class.png",
+      image: "/assets/images/whole class.png",
     },
     {
       title: "Advanced Islamic Studies",
@@ -26,7 +26,7 @@ const Courses = ({ coursesRef }) => {
         "Dive deeper into Islamic jurisprudence, theology, and history with our advanced courses.",
       buttonText: "Learn More",
       navigation: "/learn-more",
-      image: "/public/assets/images/childreninonerow.png",
+      image: "/assets/images/childreninonerow.png",
     },
   ];
   return (
