@@ -4,11 +4,11 @@ const LearnQuranSection: React.FC = () => {
   return (
     <section className="py-12 px-2  bg-white">
       <div className="container mx-auto flex flex-col lg:flex-row items-center justify-between gap-8">
-        <div className="w-full lg:w-1/2 p-2">
+        <div className="w-full lg:w-1/2 p-2 flex justify-end">
           <img
-            src="/assets/images/section-2-ar.jpg"
+            src="/public/assets/images/LearningQuraan.png"
             alt="Quran Learning"
-            className="rounded-lg shadow-2xl w-full h-auto"
+            className="rounded-lg shadow-2xl w-full lg:w-[90%] h-auto lg:max-h-[27rem]"
           />
         </div>
         <div className="w-full lg:w-1/2 p-4 mt-4 lg:mt-0 ">

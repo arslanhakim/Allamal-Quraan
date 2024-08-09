@@ -6,7 +6,7 @@ const Hero: React.FC = () => {
   return (
     <section
       id="hero-section"
-      className="relative h-screen bg-cover bg-center"
+      className="relative h-screen max-h-[70vh] sm:max-h-[60vh] lg:max-h-[70vh] bg-cover bg-center"
       style={{ backgroundImage: `url(${bgImage})` }}
     >
       <div className="absolute inset-0 bg-black-dark bg-opacity-50 "></div>

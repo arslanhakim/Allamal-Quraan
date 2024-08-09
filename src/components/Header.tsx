@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./Navbar.css";
 import { motion } from "framer-motion";
 
@@ -18,12 +18,13 @@ const Header: React.FC<HeaderProps> = ({
   instructorsRef,
   faqRef,
 }) => {
+  const navigate = useNavigate();
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [hoveredItem, setHoveredItem] = useState<number | null>(null);
 
   const headerOpt = [
-    { title: "AboutUs", ref: aboutUsRef },
+    { title: "AboutUs", link: "about-us" },
     { title: "Courses", ref: coursesRef },
     { title: "FAQs", ref: faqRef },
     { title: "Instructor", ref: instructorsRef },
@@ -45,6 +46,9 @@ const Header: React.FC<HeaderProps> = ({
       if (heroSection) {
         const heroBottom = heroSection.getBoundingClientRect().bottom;
         setScrolled(heroBottom <= 0);
+      } else {
+        // Set scrolled to true if there's no hero section
+        setScrolled(window.scrollY > 50);
       }
     };
 
@@ -66,6 +70,11 @@ const Header: React.FC<HeaderProps> = ({
   const menuClasses = `${
     isOpen ? "slide-down" : "slide-up"
   } md:hidden flex-col fixed w-full font-bold bg-primary bg-opacity-90 transition-transform duration-300 `;
+
+  const isCurrentPage = (headerLink) => {
+    // Check if the current route matches the header link (except the hash part)
+    return location.pathname === `/${headerLink}`;
+  };
 
   return (
     <header
@@ -91,11 +100,14 @@ const Header: React.FC<HeaderProps> = ({
         </Link>
         <nav className="hidden md:flex space-x-10 text-xl font-bold">
           {headerOpt.map((header, key) => (
-            <Link
+            <p
               key={key}
-              to="/about-us"
               onClick={() => {
-                scrollToSection(header.ref);
+                if (header.ref) {
+                  scrollToSection(header.ref);
+                } else if (header.link) {
+                  navigate(`/${header.link}`);
+                }
               }}
               onMouseEnter={() => setHoveredItem(key)}
               onMouseLeave={() => setHoveredItem(null)}
@@ -106,7 +118,7 @@ const Header: React.FC<HeaderProps> = ({
               }`}
             >
               {header.title}
-            </Link>
+            </p>
           ))}
           {/* <Link
             to="/about-us"
@@ -116,8 +128,8 @@ const Header: React.FC<HeaderProps> = ({
             className={`${css} `}
           >
             About Us
-          </Link>
-          <p onClick={() => scrollToSection(coursesRef)} className={`${css}  `}>
+          </Link> */}
+          {/* <p onClick={() => scrollToSection(coursesRef)} className={`${css}  `}>
             Courses
           </p>
           <p

@@ -8,7 +8,8 @@ const Courses = ({ coursesRef }) => {
         "Learn the fundamental principles of Islam, including the Five Pillars, the life of Prophet Muhammad (PBUH), and more.",
       buttonText: "Enroll Now",
       navigation: "/enroll",
-      image: "/assets/images/card-img-01.jpg",
+      // image: "/assets/images/card-img-01.jpg",
+      image: "/public/assets/images/children_with_Ustaza.png",
       pic: "",
     },
     {
@@ -17,7 +18,7 @@ const Courses = ({ coursesRef }) => {
         "Master the essential Duas and supplications for daily life, special occasions, and spiritual growth.",
       buttonText: "Join Class",
       navigation: "/join",
-      image: "/assets/images/card-img-02.jpg",
+      image: "/public/assets/images/whole class.png",
     },
     {
       title: "Advanced Islamic Studies",
@@ -25,28 +26,43 @@ const Courses = ({ coursesRef }) => {
         "Dive deeper into Islamic jurisprudence, theology, and history with our advanced courses.",
       buttonText: "Learn More",
       navigation: "/learn-more",
-      image: "/assets/images/Advance Islamic studies.jpg",
+      image: "/public/assets/images/childreninonerow.png",
     },
   ];
   return (
     <section className="py-16 bg-gray-100" ref={coursesRef}>
-      <div className="container mx-auto px-4">
-        <h2 className="text-4xl font-bold text-center mb-8">
-          Explore Our Comprehensive Islamic Courses
-        </h2>
-        <p className="text-center mb-16">
-          Our Islamic courses cover a wide range of topics, including basic
-          knowledge of Islam, Duas, and more. Each course is designed to be
-          engaging and informative, helping you deepen your understanding of
-          Islam.
-        </p>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="container mx-auto px-6 ">
+        <div className=" flex flex-col md:flex-row justify-center items-center md:justify-between mx-auto w-full md:w-3/4 mb-8">
+          <h2 className="w-full text-4xl font-bold mb-8 md:mb-0 relative text-center md:text-left whitespace-normal">
+            Offered Courses
+            {/* <div className="relative inline-block ">
+            <div
+              className="absolute left-1/2 -translate-x-1/2 bottom-full mb-2
+           py-1 bg-gray-800 text-white text-sm rounded-3xl
+          transition-opacity duration-1000 ease-in-out 
+          animate-tooltip bg-green-chart px-10"
+            >
+              wow what a tooltip
+            </div>
+          </div> */}
+          </h2>
+          <p className="text-center text-lg mb-16 md:mb-0 font-medium font-mono md:text-start">
+            We offer wide range of lessons to get your kids started with the
+            online Quran classes and pave a way for them to excel in their Quran
+            and Islamic Studies.
+          </p>
+        </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full md:w-4/5 mx-auto">
           {courses.map((course, id) => (
-            <div key={id} className="bg-white rounded-lg p-1 shadow-xl">
+            <div
+              key={id}
+              className="bg-white rounded-lg shadow-xl w-full h-full"
+              // style={{ backgroundImage: `url(${course.image})` }}
+            >
               <img
                 src={course.image}
                 alt="Basic Knowledge of Islam"
-                className="h-50 w-full object-cover rounded-lg shadow-2xl"
+                className="max-h-64 w-full object-cover rounded-lg shadow-2xl"
               />
               <div className="px-4 pb-8">
                 <h3 className="text-2xl font-bold mt-4">{course.title}</h3>
