@@ -26,9 +26,9 @@ const Header: React.FC<HeaderProps> = ({
 
   const headerOpt = [
     { title: "Home", link: "/" },
-    { title: "AboutUs", link: "/about-us" },
+    { title: "About Us", link: "/about-us" },
     { title: "Courses", ref: coursesRef },
-    { title: "Pricing", ref: coursesRef },
+    { title: "Pricing", link: "/pricing" },
     { title: "Contact", ref: coursesRef },
     { title: "FAQs", ref: faqRef },
     // { title: "Instructor", ref: instructorsRef },
