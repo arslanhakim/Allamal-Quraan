@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./Navbar.css";
 import { motion } from "framer-motion";
+import { MdKeyboardArrowRight } from "react-icons/md";
 
 interface HeaderProps {
   contactRef: React.MutableRefObject<null>;
@@ -24,8 +25,8 @@ const Header: React.FC<HeaderProps> = ({
   const [hoveredItem, setHoveredItem] = useState<number | null>(null);
 
   const headerOpt = [
-    { title: "Home", link: "about-us" },
-    { title: "AboutUs", link: "about-us" },
+    { title: "Home", link: "/" },
+    { title: "AboutUs", link: "/about-us" },
     { title: "Courses", ref: coursesRef },
     { title: "Pricing", ref: coursesRef },
     { title: "Contact", ref: coursesRef },
@@ -81,7 +82,7 @@ const Header: React.FC<HeaderProps> = ({
 
   return (
     <header
-      className={`sticky top-0 w-full z-40 overflow-hidden  ${
+      className={`sticky py-2 top-0 w-full z-40 overflow-hidden  ${
         scrolled ? "bg-primary" : "bg-white"
       }`}
       style={
@@ -101,7 +102,7 @@ const Header: React.FC<HeaderProps> = ({
             transition={{ duration: 0.5, delay: 0.3 }}
           />
         </Link>
-        <nav className="hidden md:flex space-x-10 text-xl font-bold">
+        <nav className="hidden md:flex items-center space-x-6 text-lg font-semibold">
           {headerOpt.map((header, key) => (
             <p
               key={key}
@@ -109,7 +110,8 @@ const Header: React.FC<HeaderProps> = ({
                 if (header.ref) {
                   scrollToSection(header.ref);
                 } else if (header.link) {
-                  navigate(`/${header.link}`);
+                  console.log("link", header.link);
+                  navigate(`${header.link}`);
                 }
               }}
               onMouseEnter={() => setHoveredItem(key)}
@@ -144,34 +146,37 @@ const Header: React.FC<HeaderProps> = ({
           <p onClick={() => scrollToSection(faqRef)} className={`${css}`}>
             FAQs
           </p> */}
-        </nav>
-        <button
-          onClick={() => scrollToSection(contactRef)}
-          className={`hidden md:block py-1 px-6 font-bold rounded-full hover:bg-opacity-90 hover:scale-95 transition-all duration-1000 ease-in-out font-serif ${
-            scrolled ? "bg-white text-primary " : "bg-primary text-white"
-          } animate-heartbeat`}
-        >
-          Contact Us
-        </button>
-        <button
-          className="md:hidden bg-primary outline-none border-0"
-          onClick={handleMenuToggle}
-        >
-          <svg
-            className="w-6 h-6 text-white"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
+          <button
+            onClick={() => scrollToSection(contactRef)}
+            className={`hidden md:flex items-center justify-between gap-2 py-1 px-6 font-bold rounded-full hover:bg-opacity-90 hover:scale-95 transition-all duration-1000 ease-in-out font-serif ${
+              scrolled ? "bg-white text-primary " : "bg-primary text-white"
+            } animate-heartbeat`}
           >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d={isOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16m-7 6h7"}
-            />
-          </svg>
-        </button>
+            Enroll Now{" "}
+            <span className="p-1 rounded-full h-auto">
+              <MdKeyboardArrowRight className="inline-block self-center" />
+            </span>
+          </button>
+          <button
+            className="md:hidden bg-primary outline-none border-0"
+            onClick={handleMenuToggle}
+          >
+            <svg
+              className="w-6 h-6 text-white"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d={isOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16m-7 6h7"}
+              />
+            </svg>
+          </button>
+        </nav>
       </div>
       <nav
         className={menuClasses}
