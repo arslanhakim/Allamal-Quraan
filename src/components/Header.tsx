@@ -24,10 +24,13 @@ const Header: React.FC<HeaderProps> = ({
   const [hoveredItem, setHoveredItem] = useState<number | null>(null);
 
   const headerOpt = [
+    { title: "Home", link: "about-us" },
     { title: "AboutUs", link: "about-us" },
     { title: "Courses", ref: coursesRef },
+    { title: "Pricing", ref: coursesRef },
+    { title: "Contact", ref: coursesRef },
     { title: "FAQs", ref: faqRef },
-    { title: "Instructor", ref: instructorsRef },
+    // { title: "Instructor", ref: instructorsRef },
   ];
 
   const handleMenuToggle = () => {

@@ -603,6 +603,11 @@ module.exports = {
           transform: "rotate(360deg)",
         },
       },
+      rotate: {
+        to: {
+          transform: "rotate(360deg)",
+        },
+      },
       ping: {
         "75%, 100%": {
           transform: "scale(2)",
