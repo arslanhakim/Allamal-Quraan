@@ -32,7 +32,7 @@ const Footer = ({
           </h3>
           <img
             src="/assets/images/logo-removebg-preview.png"
-            className="bg-primary text-white h-24 animate-spin"
+            className="bg-primary text-white h-24"
             alt="Allamal Qur'aan Logo"
           />
         </div>
