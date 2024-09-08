@@ -108,6 +108,7 @@
 
 import React, { useState, useEffect, useRef } from "react";
 import "tailwindcss/tailwind.css";
+import { BsArrowLeft, BsArrowRight } from "react-icons/bs";
 
 const testimonials = [
   {
@@ -189,7 +190,7 @@ const Testimonials = () => {
             onClick={handlePrev}
             className="bg-primary text-white py-2 px-4 rounded-l focus:outline-none"
           >
-            {"<"}
+            <BsArrowLeft size={18} />
           </button>
         </div>
         <div className="absolute inset-y-0 right-0 flex items-center pr-2">
@@ -197,7 +198,7 @@ const Testimonials = () => {
             onClick={handleNext}
             className="bg-primary text-white py-2 px-4 rounded-r focus:outline-none"
           >
-            {">"}
+            <BsArrowRight size={18} />
           </button>
         </div>
       </div>
