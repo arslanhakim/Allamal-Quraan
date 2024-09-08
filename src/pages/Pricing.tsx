@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import PricingCard from "../components/PricingCard";
 import Header from "../components/Header";
+import Footer from "../components/Footer";
 
 const PricingPage = () => {
   const plans = [
@@ -65,34 +66,43 @@ const PricingPage = () => {
   }, []);
 
   return (
-    <div className="min-w-screen w-full maxWidth-full px-6 py-12 bg-gray-extra text-black-dark text-center">
-      <Header
+    <>
+      <div className="min-w-screen h-full w-full maxWidth-full lg:px-6 pb-12 lg:py-12 bg-gray-extra text-black-dark text-center">
+        <Header
+          contactRef={contactRef}
+          aboutUsRef={aboutUsRef}
+          coursesRef={coursesRef}
+          instructorsRef={instructorsRef}
+          faqRef={faqRef}
+        />
+        <h1 className="text-4xl font-bold my-4">Pricing</h1>
+        <p className="text-lg mb-8">
+          Holistic and easy to follow learning online Quran learning experience
+          for everyone.
+        </p>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 px-4 lg:px-0">
+          {plans.map((plan, index) => (
+            <PricingCard key={index} plan={plan} />
+          ))}
+        </div>
+        <div className="mt-12">
+          <p className="text-xl font-semibold">
+            Having trouble deciding which plan's best for you?
+          </p>
+          to get a quote. &nbsp;
+          <button className="mt-4 bg-primary text-white py-1 px-6 rounded-full hover:bg-green-700">
+            Contact Us
+          </button>
+        </div>
+      </div>
+      <Footer
         contactRef={contactRef}
         aboutUsRef={aboutUsRef}
         coursesRef={coursesRef}
         instructorsRef={instructorsRef}
         faqRef={faqRef}
       />
-      <h1 className="text-4xl font-bold my-4">Pricing</h1>
-      <p className="text-lg mb-8">
-        Holistic and easy to follow learning online Quran learning experience
-        for kids.
-      </p>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-        {plans.map((plan, index) => (
-          <PricingCard key={index} plan={plan} />
-        ))}
-      </div>
-      <div className="mt-12">
-        <p className="text-xl font-semibold">
-          Having trouble deciding which plan's best for you?
-        </p>
-        to get a quote. &nbsp;
-        <button className="mt-4 bg-primary text-white py-1 px-6 rounded-full hover:bg-green-700">
-          Contact Us
-        </button>
-      </div>
-    </div>
+    </>
   );
 };
 

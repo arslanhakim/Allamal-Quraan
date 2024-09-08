@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from "react";
 import Header from "../components/Header";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
+import Footer from "../components/Footer";
 
 const AboutUs = () => {
   const contactRef = useRef(null);
@@ -162,6 +163,13 @@ const AboutUs = () => {
           </p>
         </div>
       </footer>
+      <Footer
+        contactRef={contactRef}
+        aboutUsRef={aboutUsRef}
+        coursesRef={coursesRef}
+        instructorsRef={instructorsRef}
+        faqRef={faqRef}
+      />
     </div>
   );
 };
