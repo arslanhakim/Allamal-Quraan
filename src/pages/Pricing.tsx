@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import PricingCard from "../components/PricingCard";
 import Header from "../components/Header";
 
@@ -59,6 +59,10 @@ const PricingPage = () => {
   const coursesRef = useRef(null);
   const instructorsRef = useRef(null);
   const faqRef = useRef(null);
+
+  useEffect(() => {
+    window.scrollTo(0, 0); // Reset scroll position to top
+  }, []);
 
   return (
     <div className="min-w-screen w-full maxWidth-full px-6 py-12 bg-gray-extra text-black-dark text-center">
