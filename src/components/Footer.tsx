@@ -40,14 +40,19 @@ const Footer = ({
           <h3 className="font-bold text-lg mb-2">Quick Links</h3>
           <ul>
             <li className="mb-1 cursor-pointer">
-              <p onClick={() => scrollToSection(aboutUsRef)} className={css}>
+              <Link to="/about-us" className={css}>
                 About Us
-              </p>
+              </Link>
             </li>
             <li className="mb-1 cursor-pointer">
               <p onClick={() => scrollToSection(coursesRef)} className={css}>
                 Courses
               </p>
+            </li>
+            <li className="mb-1 cursor-pointer">
+              <Link to="/pricing" className={css}>
+                Prices
+              </Link>
             </li>
           </ul>
         </div>
