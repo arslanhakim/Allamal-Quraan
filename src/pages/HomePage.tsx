@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import Header from "../components/Header";
 import Hero from "../components/Hero";
 import Instructors from "../components/Instructors";
@@ -27,6 +27,10 @@ const HomePage: React.FC = () => {
   const testimonialsSectionRef = useIntersectionObserver("animate-slide_Up");
   const faqSectionRef = useIntersectionObserver("animate-slide_Up");
   const contactFormSectionRef = useIntersectionObserver("animate-slide_Up");
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <div className="w-full max-w-screen bg-gray-extra text-black-dark relative">

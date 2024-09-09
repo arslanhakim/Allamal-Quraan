@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import "./Navbar.css";
 import { motion } from "framer-motion";
 import { MdKeyboardArrowRight } from "react-icons/md";
 
@@ -23,15 +22,24 @@ const Header: React.FC<HeaderProps> = ({
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [hoveredItem, setHoveredItem] = useState<number | null>(null);
+  const [isCoursesHovered, setIsCoursesHovered] = useState(false);
 
   const headerOpt = [
     { title: "Home", link: "/" },
     { title: "About Us", link: "/about-us" },
     { title: "Courses", ref: coursesRef },
     { title: "Pricing", link: "/pricing" },
-    { title: "Contact", ref: coursesRef },
+    { title: "Contact", ref: contactRef },
     { title: "FAQs", ref: faqRef },
-    // { title: "Instructor", ref: instructorsRef },
+  ];
+
+  const courses = [
+    { name: "Noorani Qaida", link: "/course-1" },
+    { name: "Basic Quran Reading", link: "/course-2" },
+    { name: "Quran with Tajweed", link: "/course-3" },
+    { name: "Memorizing Duas", link: "/course-3" },
+    { name: "Memorize Quran Online", link: "/course-3" },
+    { name: "Salat", link: "/course-3" },
   ];
 
   const handleMenuToggle = () => {
@@ -51,7 +59,6 @@ const Header: React.FC<HeaderProps> = ({
         const heroBottom = heroSection.getBoundingClientRect().bottom;
         setScrolled(heroBottom <= 0);
       } else {
-        // Set scrolled to true if there's no hero section
         setScrolled(window.scrollY > 50);
       }
     };
@@ -63,11 +70,9 @@ const Header: React.FC<HeaderProps> = ({
   }, []);
 
   const css = `navbar-option group cursor-pointer font-semibold ${
-    scrolled
-      ? "text-white hover:text-white"
-      : "text-primary hover:text-primary "
-  } 
-  `;
+    scrolled ? "text-white hover:text-white" : "text-primary hover:text-primary"
+  }`;
+
   const css2 =
     "block py-2 px-4 text-white navbar-option group hover:text-primary border-x-0 border-b border-primary";
 
@@ -75,14 +80,9 @@ const Header: React.FC<HeaderProps> = ({
     isOpen ? "slide-down" : "slide-up"
   } md:hidden flex-col fixed w-full font-bold bg-primary bg-opacity-90 transition-transform duration-300 `;
 
-  const isCurrentPage = (headerLink) => {
-    // Check if the current route matches the header link (except the hash part)
-    return location.pathname === `/${headerLink}`;
-  };
-
   return (
     <header
-      className={`sticky py-2 top-0 w-full z-40 overflow-hidden  ${
+      className={`sticky py-2 top-0 w-full z-40 overflow-visible ${
         scrolled ? "bg-primary" : "bg-white"
       }`}
       style={
@@ -96,7 +96,7 @@ const Header: React.FC<HeaderProps> = ({
           <motion.img
             src="/assets/images/logo-removebg-preview.png"
             alt="Logo"
-            className="h-16 w-auto "
+            className="h-16 w-auto"
             initial={{ opacity: 0, x: -100 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5, delay: 0.3 }}
@@ -104,57 +104,66 @@ const Header: React.FC<HeaderProps> = ({
         </Link>
         <nav className="hidden md:flex items-center space-x-6 text-lg font-semibold">
           {headerOpt.map((header, key) => (
-            <p
+            <div
               key={key}
-              onClick={() => {
-                if (header.ref) {
-                  scrollToSection(header.ref);
-                } else if (header.link) {
-                  console.log("link", header.link);
-                  navigate(`${header.link}`);
+              onMouseEnter={() => {
+                setHoveredItem(key);
+                if (header.title === "Courses") {
+                  setIsCoursesHovered(true);
                 }
               }}
-              onMouseEnter={() => setHoveredItem(key)}
-              onMouseLeave={() => setHoveredItem(null)}
-              className={`${css} ${
+              onMouseLeave={() => {
+                setHoveredItem(null);
+                setIsCoursesHovered(false);
+              }}
+              className={`relative ${css} ${
                 hoveredItem !== null && hoveredItem !== key
                   ? "opacity-50"
                   : "opacity-100"
               }`}
             >
-              {header.title}
-            </p>
+              {header.ref ? (
+                <p onClick={() => scrollToSection(header.ref)}>
+                  {header.title}
+                </p>
+              ) : (
+                <p onClick={() => navigate(header.link || "/")}>
+                  {header.title}
+                </p>
+              )}
+              {/* Courses Popover */}
+              {header.title === "Courses" &&
+                (isCoursesHovered || hoveredItem === key) && (
+                  <div
+                    className="absolute top-full left-0 mt-0 w-72 bg-white shadow-lg rounded-md overflow-hidden z-50"
+                    onMouseEnter={() => setIsCoursesHovered(true)}
+                    onMouseLeave={() => setIsCoursesHovered(false)}
+                  >
+                    {courses.map((course, index) => (
+                      <Link
+                        key={index}
+                        to={course.link}
+                        className="block px-4 py-2 font-semibold text-base hover:bg-primary hover:text-white text-primary transition"
+                      >
+                        {course.name}
+                      </Link>
+                    ))}
+                  </div>
+                )}
+            </div>
           ))}
-          {/* <Link
-            to="/about-us"
-            onClick={() => {
-              scrollToSection(aboutUsRef);
-            }}
-            className={`${css} `}
-          >
-            About Us
-          </Link> */}
-          {/* <p onClick={() => scrollToSection(coursesRef)} className={`${css}  `}>
-            Courses
-          </p>
-          <p
-            onClick={() => scrollToSection(instructorsRef)}
-            className={`${css}`}
-          >
-            Instructors
-          </p>
-          <p onClick={() => scrollToSection(faqRef)} className={`${css}`}>
-            FAQs
-          </p> */}
           <button
             onClick={() => scrollToSection(contactRef)}
-            className={`hidden md:flex items-center justify-between gap-2 py-1 px-6 font-bold rounded-full hover:bg-opacity-90 hover:scale-95 transition-all duration-1000 ease-in-out font-serif ${
+            className={`hidden md:flex text-base items-center justify-between gap-2 py-1 px-6 font-bold rounded-full hover:bg-opacity-90 hover:scale-95 transition-all duration-1000 ease-in-out font-serif ${
               scrolled ? "bg-white text-primary " : "bg-primary text-white"
             } animate-heartbeat`}
           >
             Enroll Now{" "}
             <span className="p-1 rounded-full h-auto">
-              <MdKeyboardArrowRight className="inline-block self-center" />
+              <MdKeyboardArrowRight
+                className="inline-block self-center"
+                size={25}
+              />
             </span>
           </button>
         </nav>
@@ -178,31 +187,20 @@ const Header: React.FC<HeaderProps> = ({
           </svg>
         </button>
       </div>
-      <nav
-        className={menuClasses}
-        // className={`md:hidden  z-50 w-full bg-gray-200 bg-[#844204] py-6 text-white bg-opacity-95 transform transition-transform duration-500 ${
-        //   isOpen ? "slide-down" : "slide-up"
-        // }`}
-      >
+      <nav className={menuClasses}>
         <Link
           to="/about-us"
           onClick={() => {
             scrollToSection(aboutUsRef);
             handleMenuToggle();
           }}
-          className={`${css2} `}
+          className={`${css2}`}
         >
           About Us
         </Link>
-        <p
-          onClick={() => {
-            scrollToSection(coursesRef);
-            handleMenuToggle();
-          }}
-          className={`${css2}`}
-        >
+        <Link to="/courses" onClick={handleMenuToggle} className={`${css2}`}>
           Courses
-        </p>
+        </Link>
         <p
           onClick={() => {
             scrollToSection(instructorsRef);
@@ -227,22 +225,11 @@ const Header: React.FC<HeaderProps> = ({
               scrollToSection(contactRef);
               handleMenuToggle();
             }}
-            className={`animate-heartbeat my-6 flex place-self-center shadow-2xl font-serif shadow-black-dark bg-white text-primary font-bold py-1 px-6 rounded-full hover:bg-opacity-90 hover:scale-95 transition-all duration-1000 ease-in-out
-              
-            `}
+            className={`animate-heartbeat my-6 flex place-self-center shadow-2xl font-serif shadow-black-dark bg-white text-primary font-bold py-1 px-6 rounded-full hover:bg-opacity-90 hover:scale-95 transition-all duration-1000 ease-in-out`}
           >
             Contact Us
           </button>
         </div>
-        {/* <p
-          onClick={() => {
-            scrollToSection(contactRef);
-            handleMenuToggle();
-          }}
-          className={`${css2}`}
-        >
-          Contact Us
-        </p> */}
       </nav>
     </header>
   );
