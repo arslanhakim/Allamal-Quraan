@@ -6,11 +6,11 @@ const Hero: React.FC = () => {
   return (
     <section
       id="hero-section"
-      className="relative h-screen max-h-[70vh] sm:max-h-[60vh] lg:max-h-[70vh] bg-cover bg-center"
+      className="relative z-10 h-screen max-h-[70vh] sm:max-h-[60vh] lg:max-h-[70vh] bg-cover bg-center"
       style={{ backgroundImage: `url(${bgImage})` }}
     >
       <div className="absolute inset-0 bg-black-dark bg-opacity-50 "></div>
-      <div className="relative z-10 flex flex-col gap-10 items-center justify-center h-full text-center text-white ">
+      <div className="relative flex flex-col gap-10 items-center justify-center h-full text-center text-white ">
         <div>
           <motion.h4
             className="text-3xl font-bold text-center italic"
