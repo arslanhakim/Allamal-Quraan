@@ -7,7 +7,7 @@ import FAQ from "../components/FAQ";
 import ContactForm from "../components/ContactForm";
 import Footer from "../components/Footer";
 import LearnQuranSection from "../components/LearnQuraanSection";
-import Courses from "../components/Courses";
+import CourseComp from "../components/Courses";
 import About_us from "../components/About_us";
 import useIntersectionObserver from "../components/useIntersectionObserver";
 
@@ -52,7 +52,7 @@ const HomePage: React.FC = () => {
         <LearnQuranSection />
       </div>
       <div ref={coursesSectionRef} className="animate-slide_Up">
-        <Courses coursesRef={coursesRef} />
+        <CourseComp coursesRef={coursesRef} />
       </div>
       <div ref={instructorsSectionRef} className="animate-slide_Up">
         <Instructors instructorsRef={instructorsRef} />

@@ -1,6 +1,6 @@
 import React from "react";
 
-const Courses = ({ coursesRef }) => {
+const CourseComp = ({ coursesRef }) => {
   const courses = [
     {
       title: "Basic Knowledge of Islam",
@@ -79,4 +79,4 @@ const Courses = ({ coursesRef }) => {
   );
 };
 
-export default Courses;
+export default CourseComp;
