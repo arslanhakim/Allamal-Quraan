@@ -45,6 +45,7 @@ const Instructors: React.FC = () => {
         aboutUsRef={aboutUsRef}
         coursesRef={coursesRef}
         instructorsRef={instructorsRef}
+        faqRef={faqRef}
       />
       <div className="container mx-auto text-center">
         <h2 className="text-4xl font-bold mb-6">Expert Instructors</h2>

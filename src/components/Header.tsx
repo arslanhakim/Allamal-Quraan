@@ -398,19 +398,19 @@ const Header: React.FC<HeaderProps> = ({
   const headerOpt = [
     { title: "Home", link: "/" },
     { title: "About Us", link: "/about-us" },
-    { title: "Courses", ref: coursesRef },
+    { title: "Courses", link: "/courses" },
     { title: "Pricing", link: "/pricing" },
     { title: "Contact", ref: contactRef },
     { title: "FAQs", ref: faqRef },
   ];
 
   const courses = [
-    { name: "Noorani Qaida", link: "/course-1" },
-    { name: "Basic Quran Reading", link: "/course-2" },
-    { name: "Quran with Tajweed", link: "/course-3" },
-    { name: "Memorizing Duas", link: "/course-4" },
-    { name: "Memorize Quran Online", link: "/course-5" },
-    { name: "Salat", link: "/course-6" },
+    { name: "Noorani Qaida", link: "/" },
+    { name: "Basic Quran Reading", link: "/" },
+    { name: "Quran with Tajweed", link: "/" },
+    { name: "Memorizing Duas", link: "/" },
+    { name: "Memorize Quran Online", link: "/" },
+    { name: "Salat", link: "/" },
   ];
 
   const handleMenuToggle = () => {
